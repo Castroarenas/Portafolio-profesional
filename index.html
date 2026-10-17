@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mauricio Castroarenas | Analista de Datos Jr.</title>
+<meta name="description" content="Portafolio de Mauricio Castroarenas, Analista de Datos Jr. certificado por TripleTen. SQL, Python, Power BI y Excel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8F9; --white:#FFFFFF; --ink:#14222C; --muted:#52636F;
+  --line:#D8E0E5; --accent:#0B5FA5; --accent-soft:#E3EFF9; --signal:#E8A317;
+  --max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(246,248,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font:800 1.15rem "Bricolage Grotesque",sans-serif;color:var(--ink);text-decoration:none}
+nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--accent)}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
+
+/* Hero */
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.photo{justify-self:center;width:min(100%,320px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid var(--white);box-shadow:0 0 0 3px var(--accent)}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4.4rem);font-weight:800;margin-bottom:20px}
+.hero p.role{font:600 1.2rem "Bricolage Grotesque",sans-serif;color:var(--accent);margin-bottom:14px}
+.hero p.sub{color:var(--muted);max-width:52ch;margin-bottom:28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--white)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+
+/* Sobre mí */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p+p{margin-top:14px}
+.facts{list-style:none;border-left:3px solid var(--accent);padding-left:20px}
+.facts li{margin-bottom:14px}
+.facts b{display:block;font-family:"Bricolage Grotesque",sans-serif}
+.facts span{color:var(--muted);font-size:.95rem}
+
+/* Proyectos */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column}
+.card .tool{align-self:flex-start;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.82rem;padding:3px 10px;border-radius:99px;margin-bottom:12px}
+.card h3{font-size:1.2rem;margin-bottom:10px}
+.card ul{padding-left:18px;color:var(--muted);font-size:.97rem;flex:1}
+.card li{margin-bottom:6px}
+.card a.go{margin-top:16px;font-weight:600;text-decoration:none}
+.card a.go:hover{text-decoration:underline}
+.more{margin-top:28px}
+
+/* Experiencia */
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job .when{color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.2rem;margin-bottom:2px}
+.job .org{color:var(--accent);font-weight:600;margin-bottom:8px}
+.job ul{padding-left:18px;color:var(--muted)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skill{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}
+.skill h3{font-size:1.05rem;margin-bottom:6px}
+.skill p{color:var(--muted);font-size:.93rem}
+.skill em{font-style:normal;display:inline-block;margin-top:8px;font-size:.8rem;font-weight:600;color:var(--signal);background:#FFF6DF;padding:2px 8px;border-radius:99px}
+.edu{margin-top:32px;color:var(--muted)}
+.edu b{color:var(--ink)}
+
+/* Contacto */
+.contact ul{list-style:none;margin-top:20px}
+.contact li{margin-bottom:10px}
+.contact li b{display:inline-block;width:100px;color:var(--muted);font-weight:500}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:820px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .photo{order:-1;width:200px}
+  .projects{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  nav a{margin-left:14px;font-size:.88rem}
+  nav a.hide{display:none}
+}
+@media (max-width:480px){.skills{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Mauricio Castroarenas</a>
+    <nav aria-label="Principal">
+      <a href="#sobre-mi" class="hide">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia" class="hide">Experiencia</a>
+      <a href="#skills" class="hide">Skills</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <p class="role">Analista de Datos Jr.</p>
+      <h1>Convierto datos en decisiones de negocio.</h1>
+      <p class="sub">Certificado por TripleTen. Trabajo con SQL, Python, Power BI y Excel para limpiar datos, encontrar patrones y explicar los hallazgos con claridad. Antes de los datos coordiné equipos académicos, y esa disciplina la llevo a cada análisis.</p>
+      <div class="btns">
+        <a class="btn primary" href="#proyectos">Ver proyectos</a>
+        <a class="btn ghost" href="#contacto">Contactar</a>
+      </div>
+    </div>
+    <img class="photo" src="https://avatars.githubusercontent.com/u/284444027?v=4&s=400" alt="Foto de Mauricio Castroarenas" width="320" height="320">
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <div class="wrap">
+    <h2>Sobre mí</h2>
+    <div class="about">
+      <div>
+        <p>Soy Analista de Datos Jr. con experiencia previa en coordinación académica, gestión de proyectos y liderazgo de equipos. Me gusta resolver problemas con datos para apoyar la toma de decisiones y automatizar procesos.</p>
+        <p>En mis proyectos limpio y estandarizo los datos, construyo métricas y dashboards, y comunico los resultados con resúmenes ejecutivos respaldados por evidencia.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Certificación</b><span>Data Analyst, TripleTen (2026)</span></li>
+        <li><b>Ubicación</b><span>Ciudad de México</span></li>
+        <li><b>Idiomas</b><span>Español nativo, inglés intermedio</span></li>
+        <li><b>Método de comunicación</b><span>Contexto, hallazgo e implicación</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <p class="lead">Proyectos prácticos de mi certificación en TripleTen. Cada uno parte de datos reales o simulados y termina con conclusiones para el negocio.</p>
+    <div class="projects">
+
+      <article class="card">
+        <span class="tool">Power BI · DAX</span>
+        <h3>Ventas, rentabilidad y marketing</h3>
+        <ul>
+          <li>Modelo de datos con pedidos, catálogo, marketing y fechas.</li>
+          <li>Dashboard ejecutivo con ingresos, utilidad, gasto de marketing y ticket promedio.</li>
+          <li>Tendencias mensuales, acumulados YTD y ventas por categoría.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tool">Power BI · DAX</span>
+        <h3>Ventas inmobiliarias: Andes Capital</h3>
+        <ul>
+          <li>Modelo con tablas de hechos y dimensiones (ventas, propiedades, clientes, fechas).</li>
+          <li>Ingresos por mes y ciudad, crecimiento Year over Year y participación por canal y segmento.</li>
+          <li>Análisis de cohortes para medir la recurrencia de clientes.</li>
+        </ul>
+        <a class="go" href="https://github.com/Castroarenas/Estrategia-comercial-de-Andes-Capital-Real-Estate" target="_blank" rel="noopener">Ver en GitHub</a>
+      </article>
+
+      <article class="card">
+        <span class="tool">SQL</span>
+        <h3>Embudo y retención para MercadoLibre</h3>
+        <ul>
+          <li>Embudo de 7 etapas con usuarios únicos y porcentaje de abandono entre pasos.</li>
+          <li>Cohortes por fecha de registro, medidas en 4 etapas adicionales.</li>
+          <li>CTEs, COUNT(DISTINCT) y NULLIF para evitar divisiones por cero.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tool">SQL</span>
+        <h3>Desempeño financiero</h3>
+        <ul>
+          <li>Ingresos, utilidades y margen de ganancia con tablas relacionadas.</li>
+          <li>JOINs, SUM, GROUP BY y COALESCE para manejar valores nulos.</li>
+          <li>Resumen ejecutivo con hallazgos y recomendaciones para el negocio.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tool">Python · Pandas</span>
+        <h3>Movilidad urbana y productividad económica</h3>
+        <ul>
+          <li>Dataset único a partir de dos fuentes, con limpieza y validación de tipos.</li>
+          <li>Análisis exploratorio con barras, boxplot, histograma y dispersión.</li>
+          <li>Proceso documentado en Jupyter Notebook y dataset final exportado.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="tool">Python · Pandas</span>
+        <h3>Clientes y planes de ConnectaTel</h3>
+        <ul>
+          <li>Análisis exploratorio y limpieza de datos de clientes.</li>
+          <li>Identificación de segmentos, patrones de uso y oportunidades de negocio.</li>
+          <li>Base para optimizar la oferta de planes.</li>
+        </ul>
+        <a class="go" href="https://github.com/Castroarenas/Sprint7-Proyecto-final" target="_blank" rel="noopener">Ver en GitHub</a>
+      </article>
+
+      <article class="card">
+        <span class="tool">Google Sheets</span>
+        <h3>Resumen ejecutivo de ventas Walmart</h3>
+        <ul>
+          <li>Limpieza de datos y KPIs de eficiencia (entregas a tiempo, costo por operación) y participación (usuarios activos, conversión).</li>
+          <li>Dashboard interactivo con filtros por mes, departamento y producto.</li>
+          <li>Resultados comunicados con el método Contexto, Hallazgo, Implicación.</li>
+        </ul>
+      </article>
+
+    </div>
+    <p class="more"><a href="https://github.com/Castroarenas?tab=repositories" target="_blank" rel="noopener">Ver todos mis repositorios en GitHub</a></p>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <h2>Experiencia</h2>
+    <p class="lead">Mi trayectoria previa me dio organización, liderazgo y experiencia trabajando con equipos de distintas áreas.</p>
+
+    <div class="job">
+      <div class="when">08/2023 a 03/2026<br>Ciudad de México</div>
+      <div>
+        <h3>Coordinador académico e instructor</h3>
+        <p class="org">Tecnológico de Música</p>
+        <ul>
+          <li>Coordiné procesos académicos con planeación estratégica y liderazgo educativo.</li>
+          <li>Mejoré la coordinación entre docentes con metodologías educativas.</li>
+          <li>Supervisé programas académicos con seguimiento y evaluación continua.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">03/2006 a 03/2020<br>Ciudad de México</div>
+      <div>
+        <h3>Instructor y decano</h3>
+        <p class="org">Academia de Música Fermatta</p>
+        <ul>
+          <li>Enseñanza y coordinación pedagógica con cientos de alumnos de distintos niveles.</li>
+          <li>Dirección académica y musical, arreglos, transcripción y producción.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Excel y Google Sheets</h3><p>Limpieza, KPIs y dashboards con filtros.</p></div>
+      <div class="skill"><h3>SQL</h3><p>JOINs, CTEs, agregaciones, embudos y cohortes.</p><em>En formación</em></div>
+      <div class="skill"><h3>Python y Pandas</h3><p>Limpieza, análisis exploratorio y visualización.</p><em>En formación</em></div>
+      <div class="skill"><h3>Power BI y DAX</h3><p>Modelos de datos, medidas y reportes interactivos.</p><em>En formación</em></div>
+    </div>
+    <p class="edu"><b>Educación:</b> Data Analyst Certificate, TripleTen (2026). Licenciatura en Música Popular Contemporánea, Academia de Música Fermatta (2001 a 2005), con beca completa por méritos académicos.</p>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p class="lead">Estoy buscando mi primera oportunidad como Analista de Datos Jr. Escríbeme y conversamos.</p>
+    <ul>
+      <li><b>Correo</b> <a href="mailto:c_mauricio@hotmail.com">c_mauricio@hotmail.com</a></li>
+      <li><b>LinkedIn</b> <a href="https://www.linkedin.com/in/mauriciocastroarenas/" target="_blank" rel="noopener">linkedin.com/in/mauriciocastroarenas</a></li>
+      <li><b>GitHub</b> <a href="https://github.com/Castroarenas" target="_blank" rel="noopener">github.com/Castroarenas</a></li>
+      <li><b>Teléfono</b> <a href="tel:+525534035127">(52) 55 3403 5127</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Mauricio Alejandro Castroarenas Cifuentes</div>
+</footer>
+
+</body>
+</html>
